@@ -1,0 +1,238 @@
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+
+.content h2 {
+  font-family: var(--font-title);
+  text-align: center;
+  font-size: 7rem;
+  margin-bottom: 20px;
+  color: #ffb432;
+  text-shadow:
+    -2px -2px 5px rgba(255, 68, 0, 0.644),
+    /* Brilho superior */
+    4px 4px 8px rgba(89, 24, 5, 0.538);
+  /* Sombra inferior */
+}
+
+.chat-bubble {
+  position: relative;
+  background: #a11212;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 15px 0;
+  position: relative;
+  max-width: 70%;
+}
+
+
+.chat-bubble::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+}
+
+.chat-bubble.left {
+  margin-right: auto;
+}
+
+.chat-bubble.right {
+  margin-left: auto;
+  background: #d32f2f;
+}
+
+.chat-bubble img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+}
+
+.chat-bubble.left img {
+  left: -99px;
+}
+
+.chat-bubble.right img {
+  right: -99px;
+}
+
+.chat-bubble p {
+  margin: 0;
+  font-size: 16px;
+  font-family: var(--font-text);
+}
+
+.chat-bubble .name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: var(--font-title);
+}
+
+.reactions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.reactions span {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.reactions .count {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/*+++++ Botão top +++++*/
+
+.styled-wrapper .button {
+  display: block;
+  position: relative;
+  width: 76px;
+  height: 76px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+.styled-wrapper .button:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+  border: 3px solid var(--cor4);
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+  border: 4px solid var(--cor5);
+  transform: scale(1.3);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.styled-wrapper .button:hover:before,
+.styled-wrapper .button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.styled-wrapper .button:hover:after,
+.styled-wrapper .button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.styled-wrapper .button-elem {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 24px 18px 0 22px;
+  fill: #f0eeef;
+}
+
+.styled-wrapper .button:hover .button-box,
+.styled-wrapper .button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-69px);
+}
+
+/* POSICIONAMENTO FIXO no canto inferior direito */
+.to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+/* ROTACIONAR A SETA PARA CIMA */
+.to-top .button-elem svg {
+  transform: rotate(90deg);
+}
+
+
+@media (max-width: 500px) {
+  .chat-bubble {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .chat-bubble img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .chat-bubble.left img {
+    left: -70px;
+  }
+
+  .chat-bubble.right img {
+    right: -70px;
+  }
+
+  .content h2 {
+    font-size: 2.5rem;
+  }
+
+  .filtros-categorias button {
+    width: 90%;
+    margin: 8px auto;
+    display: block;
+  }
+
+  .divisoria {
+    display: none;
+  }
+
+  .styled-wrapper .button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .styled-wrapper .button-elem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 15px 15px 0 15px;
+    /* Centraliza o ícone no botão menor */
+  }
+
+  .styled-wrapper .button:hover .button-box,
+  .styled-wrapper .button:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-1px);
+  }
+}

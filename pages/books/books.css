@@ -1,0 +1,51 @@
+.books {
+    display: flex;
+    flex-direction: row;
+}
+
+.cover img {
+    position: relative;
+    display: flex;
+    left: 75%;
+    top: 10%;
+    width: 237px;
+    height: 373px;
+}
+
+
+.title {
+    position: relative;
+    display: flex;
+    left: 10%;
+    margin-top: 2%;
+    font-size: 2rem;
+}
+
+.year {
+    position: relative;
+    display: flex;
+    left: 5%;
+    margin-top: 6%;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.author {
+    position: relative;
+    display: flex;
+    left: 2%;
+    margin-top: 8%;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.info {
+    position: relative;
+    display: flex;
+    left: -2%;
+    margin-top: 10%;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin: 7%;
+}

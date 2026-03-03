@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap');
+
+:root {
+  --cor1: #3c2a1e;
+  --cor2: #685100;
+  --cor3: #D93D04;
+  --cor4: #F28729;
+  --cor5: #F2C879;
+  --cor6: #ffffff;
+  --text-light: #F2C879;
+  --font-title: "MuseoModerno", sans-serif;
+  --font-text: "Nunito", sans-serif;
+  --font-qoute: "Pacifico", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor1);
+}
+
+a {
+  font-family: var(--font-text);
+  text-decoration: none;
+}
+
+h1 {
+  font-family: var(--font-title);
+  color: var(--cor5);
+  text-shadow:
+    0 0 10px rgba(255, 69, 0, 0.8),
+    0 0 20px rgba(255, 69, 0, 0.6),
+    0 0 30px rgba(255, 68, 0, 0.738);
+}
+
+h2 {
+  font-family: var(--font-title);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #ffb432;
+  text-shadow:
+    -2px -2px 5px rgba(255, 68, 0, 0.644),
+    4px 4px 8px rgba(89, 24, 5, 0.538);
+}
+
+h3 {
+  font-family: var(--font-title);
+  color: #ffb432;
+  text-shadow:
+    -2px -2px 5px rgba(255, 68, 0, 0.644),
+    4px 4px 8px rgba(89, 24, 5, 0.538);
+}
+
+p {
+  font-family: var(--font-text);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+.logo_h1 {
+  font-family: var(--font-title);
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ffb432;
+  text-shadow:
+    0 0 10px rgba(255, 69, 0, 0.8),
+    0 0 20px rgba(255, 69, 0, 0.6),
+    0 0 30px rgba(255, 68, 0, 0.738);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-family: var(--font-text);
+  position: relative;
+  z-index: -1;
+}
+
+/*******************  SCROLL *********************************/
+::-webkit-scrollbar {
+  width: 10px;
+  /* Ajusta a largura da barra de rolagem  */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgb(2, 0, 1) 0%, rgb(106, 15, 15) 35%, rgba(255, 64, 0, 0.889) 100%);
+  border-radius: 10px;
+  /* Torna as bordas do polegar arredondadas*/
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(2, 0, 1);
+  /* Cor de fundo da trilha */
+
+}
+
+/* Ajusta a aparência quando o usuário interage com a barra de rolagem */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, rgb(2, 0, 1) 0%, rgb(203, 36, 36) 35%, rgb(255, 0, 0) 100%);
+  /* Cor mais clara quando o polegar é hover */
+}
