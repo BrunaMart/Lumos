@@ -17,25 +17,3 @@ function revealOnScroll() {
 
 
 
-
-
-window.addEventListener('scroll', revealOnScroll);
-
-
-//SCROLL ANIMATION
-ScrollReveal({
-  reset: true,
-  distance: '60px',
-  duration: 2500,
-  delay: 400,
-});
-
-ScrollReveal().reveal('',  { delay: 500, origin: 'left' });
-
-//ScrollReveal().reveal('.sec_1, .img, .info', { delay: 600, origin: 'bottom' });
-//ScrollReveal().reveal('.text-box', { delay: 700, origin: 'rigth' });
-//ScrollReveal().reveal('media-icon i', { delay: 500, origin: 'bottom', interval: 200 });
-//ScrollReveal().reveal('.sec_2, .img .sec_3, .img', { delay: 500, origin: 'top' });
-//ScrollReveal().reveal('.media-info li', { delay: 500, origin: 'left', interval: 200 });//menu
-
-

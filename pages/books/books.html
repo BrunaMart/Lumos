@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Books</title>
   <link rel="stylesheet" href="/pages/books/books.css">
-  <link rel="stylesheet" href="/components/menu/menu.css">
-  <link rel="stylesheet" href="/global.css">
-
-  <script src="https://unpkg.com/scrollreveal"></script>
-
+  <link rel="stylesheet" href="/components/navbar/menu.css">
+  <link rel="stylesheet" href="/components/footer/footer.css">
+  <link rel="stylesheet" href="/styles/global.css">
 </head>
 
 <body>
@@ -36,26 +34,101 @@
     </nav>
   </header>
 
+<section class="sec-01">
+  <div class="books-grid">
 
-  <section class="sec-01">
-    <div class="books">
-      <div class="cover" id="cover"><img src="/media/ex.jpg" alt=""></div>
+    <!-- Card 1: Pride and Prejudice -->
+    <div class="book-card">
+      <div class="portrait-side">
+        <img 
+          src="/media/jane-austen-portrait.jpg" 
+          alt="Portrait of Jane Austen" 
+          class="portrait"
+        >
+      </div>
 
-      <h3 class="title" id="title">Pride and Prejudice</h3>
-      <p class="author" id="author">Jane Austen</p>
-      <p class="year" id="year">1813</p>
-      <p class="info" id="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iste nostrum assumenda
-        officiis quas optio. Magni nobis maxime illum non ex voluptatem autem itaque? Praesentium necessitatibus magni
-        amet laborum doloribus.</p>
+      <div class="info-side">
+        <h1 class="main-title">PRIDE AND PREJUDICE</h1>
+        <p class="author-year">
+          <span>Jane Austen</span> 1813
+        </p>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iste nostrum assumenda
+          officiis quas optio. Magni nobis maxime illum non ex voluptatem autem itaque? Praesentium necessitatibus magni
+          amet laborum doloribus.
+        </p>
+      </div>
     </div>
-  </section>
 
+    <!-- Card 2: Exemplo repetido (podes mudar imagem/título depois) -->
+    <div class="book-card">
+      <div class="portrait-side">
+        <img 
+          src="/media/ex.jpg" 
+          alt="Another classic author portrait" 
+          class="portrait"
+        >
+      </div>
 
+      <div class="info-side">
+        <h1 class="main-title">SENSE AND SENSIBILITY</h1>
+        <p class="author-year">
+          <span>Jane Austen</span> 1811
+        </p>
+        <p class="description">
+          Dolor sit amet consectetur adipisicing elit. Quisquam, voluptates! Tempora, error? 
+          Voluptatem, accusantium! Facere, quasi? Doloremque, voluptatum!
+        </p>
+      </div>
+    </div>
 
-  <footer>
-    <p>&copy;2026 Lumos. All rights reserved.</p>
-  </footer>
+    <!-- Card 3: Mais um para preencher a row -->
+    <div class="book-card">
+      <div class="portrait-side">
+        <img 
+          src="/media/ex.jpg" 
+          alt="Portrait example" 
+          class="portrait"
+        >
+      </div>
+
+      <div class="info-side">
+        <h1 class="main-title">EMMA</h1>
+        <p class="author-year">
+          <span>Jane Austen</span> 1815
+        </p>
+        <p class="description">
+          Consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint 
+          commodi repudiandae consequuntur.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4: Para ver o wrap para linha de baixo -->
+    <div class="book-card">
+      <div class="portrait-side">
+        <img 
+          src="/media/ex.jpg" 
+          alt="Portrait example" 
+          class="portrait"
+        >
+      </div>
+
+      <div class="info-side">
+        <h1 class="main-title">MANSFIELD PARK</h1>
+        <p class="author-year">
+          <span>Jane Austen</span> 1814
+        </p>
+        <p class="description">
+          Temporibus autem quibusdam et aut officiis debitis aut rerum 
+          necessitatibus saepe eveniet ut et.
+        </p>
+      </div>
+    </div>
+
   </div>
+</section>
+
 
   <script src="/pages/books/books.js" defer></script>
   <script src="/components/menu.js" defer></script>

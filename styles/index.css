@@ -1,0 +1,154 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+#background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.335);
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  z-index: 3;
+}
+
+.index-logo {
+  margin-bottom: 20px;
+}
+
+.index-logo img {
+  height: auto;
+  position: relative;
+  top: -39px;
+  display: flex;
+}
+
+.index-h1 {
+  position: relative;
+  top: -108px;
+  margin-bottom: 20px;
+  display: flex;
+
+  color: var(--cor4);
+  font-size: 3em;
+  text-shadow: 0 1px 0 var(--cor5), 0 2px 0 var(--cor5),
+    0 3px 0 var(--cor5), 0 4px 0 var(--cor5),
+    0 5px 0 var(--cor5), 0 6px 0 var(--cor5),
+    0 7px 0 var(--cor5), 0 8px 0 var(--cor5),
+    0 9px 0 var(--cor5), 0 10px 0 var(--cor5),
+    0 11px 0 var(--cor5), 0 12px 0 var(--cor5),
+    0 20px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5em;
+  z-index: 3;
+}
+
+.index-p {
+  position: relative;
+  top: -128px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  display: flex;
+
+  color: var(--cor7);
+  text-align: center;
+
+  text-shadow:
+   0 0 7px #F2C879,
+    0 0 7px #F2C879,
+    0 0 25px #F2C879,
+    0 0 26px #F2C879,
+    0 0 69px #F2C879;
+}
+
+.btn {
+  position: absolute;
+  top: 82%;
+  left: 37%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pt-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* ou 100% se preferir */
+      overflow: hidden;
+    }
+
+    .pt-page {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      backface-visibility: hidden;
+      transform: translate3d(0,0,0);
+    }
+
+    .pt-page-current {
+      visibility: visible;
+      z-index: 1;
+    }
+
+    /* Animação: página atual SAI para cima */
+    .pt-page-moveToTop {
+      animation: moveToTop 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      z-index: 2;
+    }
+
+    @keyframes moveToTop {
+      to {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* (A entrada da nova página acontece naturalmente na página destino) */
+    
+    /* Opcional: fade leve durante a saída para ficar mais suave */
+    .pt-page-moveToTop {
+      opacity: 2;
+    }
+    .pt-page-moveToTop.fade-helper {
+      opacity: 3;
+      transition: opacity 0.8s ease;
+    }
