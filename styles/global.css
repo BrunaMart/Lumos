@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap');
 
 :root {
-  --cor1: #3c2a1e;
-  --cor2: #685100;
+  --cor1: #69351d;
+  --cor2: #3f251c;
   --cor3: #D93D04;
   --cor4: #F28729;
-  --cor5: #F2C879; 
+  --cor5: #F2C879;
   --cor6: #f8c736;
   --cor7: #f2d381;
   --text-light: #F2C879;
@@ -31,7 +31,12 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: var(--cor1);
+  background-color: var(--cor2);
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
 }
 
 a {
@@ -92,6 +97,19 @@ p {
   text-transform: uppercase;
 
 }
+
+
+footer {
+  position: relative;
+  top: 740px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-family: var(--font-text);
+  z-index: 5;
+}
+
 
 
 /*******************  SCROLL *********************************/

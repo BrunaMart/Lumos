@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="/components/menu/menu.css">
-    <link rel="stylesheet" href="/global.css">
-    <script src="/components/menu/menu.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="/components/menu/menu.css">
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="./menu.css">
 </head>
 
 <body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      
+      <div class="logo">
+       <a href="/index.html"> 
+        <img src="/media/lumos.png" alt="Lumos">
+      </a>
+       </div>
+      </li>
 
-  <header class="header">
-    <video autoplay muted loop>
-      <source src="/media/background.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
+      <li class="nav-item">
+        <a href="/pages/movies/movies.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path
+              d="M512 128C514 128 515.9 128.1 517.8 128.3L422.1 224L490 224L562 152C570.8 163 576 176.9 576 192L576 448C576 483.3 547.3 512 512 512L128 512C92.7 512 64 483.3 64 448L64 192C64 156.7 92.7 128 128 128L198.1 128L102.1 224L170 224L265 129L266 128L358.1 128L262.1 224L330 224L425 129L426 128L512.1 128z" />
+          </svg>
+          <span class="link-text">Movies</span>
+        </a>
+      </li>
 
+      <li class="nav-item">
+        <a href="/pages/series/series.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path
+              d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM252.3 211.1C244.7 215.3 240 223.4 240 232L240 408C240 416.7 244.7 424.7 252.3 428.9C259.9 433.1 269.1 433 276.6 428.4L420.6 340.4C427.7 336 432.1 328.3 432.1 319.9C432.1 311.5 427.7 303.8 420.6 299.4L276.6 211.4C269.2 206.9 259.9 206.7 252.3 210.9z" />
+          </svg>
+          <span class="link-text">Series</span>
+        </a>
+      </li>
 
-    <div class="logo"><img src="/media/lumos.png" alt="Lumos logo"></div>
-    <h1 class="logo_h1"></h1>
+      <li class="nav-item">
+        <a href="/pages/books/books.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path
+              d="M160 576L448 576C501 576 544 533 544 480L544 160C544 107 501 64 448 64L144 64C117.5 64 96 85.5 96 112L96 400C96 420.9 109.4 438.7 128 445.3L128 512C110.3 512 96 526.3 96 544C96 561.7 110.3 576 128 576L160 576zM448 448C465.7 448 480 462.3 480 480C480 497.7 465.7 512 448 512L192 512L192 448L448 448zM369.1 208.4C371.6 202.3 380.3 202.3 382.8 208.4L393.1 233.2L419.9 235.3C426.5 235.8 429.1 244 424.1 248.3L403.8 265.9L410 292C411.5 298.4 404.5 303.5 398.9 300.1L376 286.1L353.1 300.1C347.5 303.5 340.5 298.5 342 292L348.2 265.9L327.8 248.4C322.8 244.1 325.5 235.9 332 235.4L358.8 233.3L369.1 208.5zM196 256C196 187.5 251.5 132 320 132C343.8 132 366.1 138.7 385 150.4C389.8 153.3 391.9 159.2 390 164.5C388.1 169.8 382.9 173.1 377.3 172.5C374.2 172.2 371.1 172 367.9 172C321.5 172 283.9 209.6 283.9 256C283.9 302.4 321.5 340 367.9 340C371.1 340 374.2 339.8 377.3 339.5C382.9 338.9 388.1 342.2 390 347.5C391.9 352.8 389.7 358.7 385 361.6C366.1 373.3 343.8 380 320 380C251.5 380 196 324.5 196 256z" />
+          </svg>
+          <span class="link-text">Books</span>
+        </a>
+      </li>
 
-    <nav class="nav">
-      <button class="hamburger"></button>
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/pages/books/books.html" class="link-com-transicao">Books</a></li>
-        <li><a href="/pages/movies/movies.html">Movies</a></li>
-        <li><a href="/pages/series/series.html">Series</a></li>
-      </ul>
-    </nav>
-  </header>
-     
+      <li class="nav-item">
+        <a href="/pages/info/about.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path
+              d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224C352 241.7 337.7 256 320 256C302.3 256 288 241.7 288 224zM280 288L328 288C341.3 288 352 298.7 352 312L352 400L360 400C373.3 400 384 410.7 384 424C384 437.3 373.3 448 360 448L280 448C266.7 448 256 437.3 256 424C256 410.7 266.7 400 280 400L304 400L304 336L280 336C266.7 336 256 325.3 256 312C256 298.7 266.7 288 280 288z" />
+          </svg>
+          <span class="link-text">About</span>
+        </a>
+      </li>
 
+    </ul>
+  </nav>
+
+  <script src="./menu.js"></script>
 </body>
+
 </html>

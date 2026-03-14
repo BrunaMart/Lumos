@@ -4,66 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series</title>
+    
     <link rel="stylesheet" href="/pages/series/series.css">
-    <link rel="stylesheet" href="/components/navbar/navbar.css">
     <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/components/navbar/menu.css">
 </head>
 
 <body>
 
-  <!-- PESQUISAR -->
-  <section class="search-bar">
-    <input type="text" id="search" placeholder="Buscar por..." onkeyup="searchRecipes()">
-</section>
+  <div id="menu"></div>
 
-<!-- CONTEÚDO -->
-
- <header class="header">
-    <video autoplay muted loop>
-      <source src="/media/background.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-
-
-    <div class="logo"><img src="/media/lumos.png" alt="Lumos logo"></div>
-    <h1 class="logo_h1"></h1>
-
-    <nav class="nav">
-      <button class="hamburger"></button>
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/pages/books/books.html" class="link-com-transicao">Books</a></li>
-        <li><a href="/pages/movies/movies.html">Movies</a></li>
-        <li><a href="/pages/series/series.html">Series</a></li>
-      </ul>
-    </nav>
-  </header>
-    
-<!-- BOTÃO TOP FIXO -->
-  <div class="styled-wrapper to-top">
-    <button class="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-      <div class="button-box">
-        <span class="button-elem">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
-            <path
-              fill="red"
-              d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-            ></path>
-          </svg>
-        </span>
-        <span class="button-elem">
-          <svg fill="orange" viewBox="0 0  24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
-            <path
-              d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-            ></path>
-          </svg>
-        </span>
-      </div>
-    </button>
-  </div>
+  <main>
+    <h1>Welcome to the Series page!</h1>
+    <p>Just one more episode… we promise.</p>
+  </main>
 
     
 <script src="series.js" defer></script>
-<script src="/components/menu.js" defer></script>
+<script src="/components/navbar/menu.js" defer></script>
 </body>
 </html>
