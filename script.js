@@ -20,3 +20,4 @@ document.addEventListener('click', function (e) {
     window.location.href = href;
   }, 800); // mesmo tempo ou um pouco maior que a duração da animação (0.8s)
 });
+
