@@ -27,8 +27,10 @@ body {
 
 .navbar {
   position: fixed;
+  box-shadow: 7px 0 0 var(--cor4);
   background-color: var(--cor1);
   transition: width 600ms ease;
+  z-index: 12;
 }
 
 .navbar-nav {
@@ -76,6 +78,7 @@ body {
   min-width: 2rem;
   margin: 0 1.5rem;
 }
+
 
 
 @media only screen and (max-width: 600px) {

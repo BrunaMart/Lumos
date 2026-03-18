@@ -7,7 +7,7 @@
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* 2+ colunas em desktop, ajusta auto */
-  gap: 40px; /* espaço entre cards */
+  gap: 40px; 
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -18,7 +18,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease; /* hover leve opcional */
+  transition: transform 0.3s ease; 
 }
 
 .book-card:hover {

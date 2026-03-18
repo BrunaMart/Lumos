@@ -1,0 +1,138 @@
+/**Logo*/
+.about-text {
+    margin-right: 447px;
+}
+
+.about-logo {
+    position: relative;
+    top: -470px;
+    left: 753px;
+    padding: 20px;
+}
+
+.frame {
+    display: inline-block;
+    padding: 3px;
+    width: 325px;
+    left: 216px;
+    border-radius: 16px;
+    position: relative;
+}
+
+.frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 3px dashed #ffd700;
+    pointer-events: none;
+}
+
+.frame img {
+    position: relative;
+    left: -36px;
+    display: block;
+    width: 419px;
+
+}
+
+.text-frame p {
+    margin: 0%;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/*TOGGLE*/
+.toggle {
+    position: relative;
+    background: #1e1e1e;
+    color: white;
+    font-family: var(--font-title);
+    font-size: 1.0rem;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    left: 262px;
+    margin-top: 16px;
+}
+
+.toggle summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle summary::marker {
+    color: #aaa;
+}
+
+.toggle p {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.about-ul {
+    position: relative;
+    margin: 2%;
+    left: 18px;
+}
+
+.toggle[open] {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*CARDS*/
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2.3rem;
+}
+
+.project-about {
+    /* min-height: 550px; */
+    max-width: 336px;
+    background: #000000b3;
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 45px -1rem;
+    padding: 28px 37px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+.project-about:hover {
+    border: 3px solid var(--cor4);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--cor7);
+}
+
+.project-text {
+    font-size: 1rem;
+}
+
+.svg-about {
+    position: relative;
+    display: flex;
+    width: 120px;
+    fill: #ffd700;
+}
