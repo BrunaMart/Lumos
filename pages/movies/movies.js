@@ -77,13 +77,14 @@ async function fetchMoviesByGenre(genreId) {
 }
 
 // ================================
-// Find the actual duration of a film.
+// Find the actual duration 
+// of a film
 // ================================
 async function fetchMovieDetails(id) {
     try {
         const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`);
         const data = await res.json();
-        return data.runtime; // duração em minutos
+        return data.runtime; 
     } catch {
         return null;
     }
@@ -91,7 +92,7 @@ async function fetchMovieDetails(id) {
 
 // ================================
 // Looking for where to
-//  watch the movie?
+//  watch the movie
 // ================================
 async function fetchWatchProviders(movieId) {
     try {
