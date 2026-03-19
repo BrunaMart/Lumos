@@ -1,9 +1,0 @@
-{
-  "routes": [
-    { "src": "/", "dest": "/pages/home/home.html" },
-    { "src": "/books", "dest": "/pages/books/books.html" },
-    { "src": "/movies", "dest": "/pages/movies/movies.html" },
-    { "src": "/series", "dest": "/pages/series/series.html" },
-    { "src": "/info", "dest": "/pages/info/about.html" }
-  ]
-}
