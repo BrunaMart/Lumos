@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Books</title>
   <link rel="icon" type="image/svg+xml" href="/media/icons/books.svg">
+  <!--STYLES-->
   <link rel="stylesheet" href="/pages/books/books.css">
+  <link rel="stylesheet" href="/styles/global.css">
   <!--COMPONENTS-->
   <link rel="stylesheet" href="/components/navbar/menu.css">
-  <link rel="stylesheet" href="/styles/global.css">
-  <link rel="stylesheet" href="/components/cards/cards.css">
 </head>
 
 <body>
@@ -21,105 +21,37 @@
     <h1>Welcome to the Books page!</h1>
     <p>Between pages live a thousand universes.</p>
 
-    <div id="cards"></div>
+    <div class="group">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+        <g>
+          <path
+            d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+          </path>
+        </g>
+      </svg>
+      <input placeholder="Search Books" id="search" type="search" class="input">
+    </div>
+
+    <select id="options" name="options" class="custom-select">
+      <option value="">Books Genre</option>
+      <option value="action">Action</option>
+      <option value="romance">Romance</option>
+      <option value="comedy">Comedy</option>
+      <option value="horror">Horror</option>
+      <option value="drama">Drama</option>
+      <option value="sci-fi">Sci-Fi</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="thriller">Thriller</option>
+    </select>
+
+    <div class="container">
+      <div class="grid">
+      </div>
+    </div>
+
   </main>
 
-  <section class="sec-01">
-    <div class="books-grid">
-
-      <!-- Card 1: Pride and Prejudice 
-    <div class="book-card">
-      <div class="portrait-side">
-        <img 
-          src="/media/jane-austen-portrait.jpg" 
-          alt="Portrait of Jane Austen" 
-          class="portrait"
-        >
-      </div>
-
-      <div class="info-side">
-        <h1 class="main-title">PRIDE AND PREJUDICE</h1>
-        <p class="author-year">
-          <span>Jane Austen</span> 1813
-        </p>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iste nostrum assumenda
-          officiis quas optio. Magni nobis maxime illum non ex voluptatem autem itaque? Praesentium necessitatibus magni
-          amet laborum doloribus.
-        </p>
-      </div>
-    </div>
--->
-      <!-- Card 2: Exemplo repetido (podes mudar imagem/título depois) 
-    <div class="book-card">
-      <div class="portrait-side">
-        <img 
-          src="/media/ex.jpg" 
-          alt="Another classic author portrait" 
-          class="portrait"
-        >
-      </div>
-
-      <div class="info-side">
-        <h1 class="main-title">SENSE AND SENSIBILITY</h1>
-        <p class="author-year">
-          <span>Jane Austen</span> 1811
-        </p>
-        <p class="description">
-          Dolor sit amet consectetur adipisicing elit. Quisquam, voluptates! Tempora, error? 
-          Voluptatem, accusantium! Facere, quasi? Doloremque, voluptatum!
-        </p>
-      </div>
-    </div>
--->
-      <!-- Card 3: Mais um para preencher a row 
-    <div class="book-card">
-      <div class="portrait-side">
-        <img 
-          src="/media/ex.jpg" 
-          alt="Portrait example" 
-          class="portrait"
-        >
-      </div>
-
-      <div class="info-side">
-        <h1 class="main-title">EMMA</h1>
-        <p class="author-year">
-          <span>Jane Austen</span> 1815
-        </p>
-        <p class="description">
-          Consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint 
-          commodi repudiandae consequuntur.
-        </p>
-      </div>
-    </div>
--->
-      <!-- Card 4: Para ver o wrap para linha de baixo 
-    <div class="book-card">
-      <div class="portrait-side">
-        <img 
-          src="/media/ex.jpg" 
-          alt="Portrait example" 
-          class="portrait"
-        >
-      </div>
--->
-      <!--<div class="info-side">
-        <h1 class="main-title">MANSFIELD PARK</h1>
-        <p class="author-year">
-          <span>Jane Austen</span> 1814
-        </p>
-        <p class="description">
-          Temporibus autem quibusdam et aut officiis debitis aut rerum 
-          necessitatibus saepe eveniet ut et.
-        </p>
-      </div>
-    </div>
-  </div>-->
-
-  </section>
-     <div id="footer"></div>
-
+  <div id="footer"></div>
   <script src="/pages/books/books.js" defer></script>
   <script src="/components/navbar/menu.js" defer></script>
   <script src="/components/footer/footer.js" defer></script>

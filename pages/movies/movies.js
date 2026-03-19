@@ -19,8 +19,7 @@ const select = document.getElementById("options");
 let genreIdMap = {}; // id → name of genres
 
 // ================================
-//  Search for the list 
-// of genres on TMDb.
+// Fetch genre list from TMDb
 // ================================
 async function fetchGenreList() {
     const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`);
@@ -29,29 +28,36 @@ async function fetchGenreList() {
         genreIdMap[g.id] = g.name;
     });
 }
-
 fetchGenreList();
 
 // ================================
-// Debounce to search bar
+// Debounce search bar
 // ================================
 let timeout;
-searchInput.addEventListener("keyup", () => {
+searchInput.addEventListener("input", () => {
     clearTimeout(timeout);
 
     timeout = setTimeout(() => {
         const query = searchInput.value.trim();
-        if (query.length < 2) return;
-
+        if (query.length === 0){
+            fetchMoviesByOscar2026();
+            return; 
+        }
         fetchMoviesBySearch(query);
-    }, 400);
+    }, 300);
 });
 
 // ================================
-// Filter by gender
+// Filter by genre
 // ================================
 select.addEventListener("change", () => {
-    const genre = genreMap[select.value];
+    const genreValue = select.value;
+    if (!genreValue) {
+        fetchMoviesByOscar2026();
+        return;
+    }
+
+    const genre = genreMap[genreValue];
 
     if (searchInput.value.trim().length > 0) return;
 
@@ -62,37 +68,57 @@ select.addEventListener("change", () => {
 // Search movies by title
 // ================================
 async function fetchMoviesBySearch(query) {
-    const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`);
-    const data = await res.json();
-    displayMovies(data.results);
+    try {
+        const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
+        const data = await res.json();
+        displayMovies(data.results);
+    } catch (err) {
+        console.error("Erro ao buscar filmes:", err);
+    }
 }
 
 // ================================
-//  Search for movies by genre
+// Search movies by genre
 // ================================
 async function fetchMoviesByGenre(genreId) {
-    const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreId}`);
-    const data = await res.json();
-    displayMovies(data.results);
+    try {
+        const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc`);
+        const data = await res.json();
+        displayMovies(data.results);
+    } catch (err) {
+        console.error("Erro ao buscar por gênero:", err);
+    }
 }
 
 // ================================
-// Find the actual duration 
-// of a film
+// Fetch movies “Oscar 2026”
+// ================================
+async function fetchMoviesByOscar2026() {
+    const year = 2026;
+    try {
+        const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=${year}&sort_by=vote_average.desc&vote_count.gte=50`);
+        const data = await res.json();
+        displayMovies(data.results);
+    } catch (err) {
+        console.error("Erro ao buscar filmes do Oscar 2026:", err);
+    }
+}
+
+// ================================
+// Fetch movie details (duration)
 // ================================
 async function fetchMovieDetails(id) {
     try {
         const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`);
         const data = await res.json();
-        return data.runtime; 
+        return data.runtime;
     } catch {
         return null;
     }
 }
 
 // ================================
-// Looking for where to
-//  watch the movie
+// Fetch watch providers
 // ================================
 async function fetchWatchProviders(movieId) {
     try {
@@ -108,10 +134,15 @@ async function fetchWatchProviders(movieId) {
 }
 
 // ================================
-//   Show movies on the grid
+// Display movies in grid
 // ================================
 function displayMovies(movies) {
     grid.innerHTML = "";
+
+    if (!movies || movies.length === 0) {
+        grid.innerHTML = "<p style='color:white'>No movies found.</p>";
+        return;
+    }
 
     movies.forEach(async movie => {
         const image = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "/media/icons/no-image.svg";
@@ -121,22 +152,26 @@ function displayMovies(movies) {
         const year = movie.release_date ? movie.release_date.slice(0, 4) : "N/A";
 
         const card = `
-      <div class="card">
-        <img class="cover" src="${image}" alt="">
-        <div class="info">
-          <h2 class="title">${movie.title} (${year})</h2>
-          <div class="details">
-            <span class="duration">Duration: ${duration ? duration + " min" : "N/A"}</span>
-            <span class="gender">${movie.genre_ids.map(id => genreIdMap[id]).join(", ")}</span>
-            <span class="providers">${providers.length ? providers.join(", ") : "N/A"}</span>
-          </div>
-          <p class="description">${description}</p>
+        <div class="card">
+            <img class="cover" src="${image}" alt="">
+            <div class="info">
+                <h2 class="title">${movie.title} (${year})</h2>
+                <div class="details">
+                    <span class="duration">Duration: ${duration ? duration + " min" : "N/A"}</span>
+                    <span class="gender">${movie.genre_ids.map(id => genreIdMap[id]).join(", ")}</span>
+                    <span class="providers">${providers.length ? providers.join(", ") : "N/A"}</span>
+                </div>
+                <p class="description">${description}</p>
+            </div>
         </div>
-      </div>
-    `;
+        `;
 
         grid.innerHTML += card;
     });
 }
 
-fetchMoviesBySearch("a"); 
+// ================================
+// Homepage: 2026 Oscar 
+// nominations
+// ================================
+fetchMoviesByOscar2026();
