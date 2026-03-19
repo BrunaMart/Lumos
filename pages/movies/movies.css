@@ -6,10 +6,10 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 21px;
     position: relative;
-    left: -138px;
+    left: -81px;
     justify-items: center;
 }
 
@@ -77,6 +77,15 @@
     font-family: var(--font-text);
 }
 
+.providers {
+    background: var(--cor7);
+    color: rgb(43, 41, 41);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-family: var(--font-text);
+}
+
 .description {
     font-size: 0.95rem;
     line-height: 1.5;
@@ -86,10 +95,10 @@
 @media (min-width: 800px) {
     .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 21px;
         position: relative;
-        left: -138px;
+        left: -81px;
         justify-items: center;
     }
 }

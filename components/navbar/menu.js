@@ -1,4 +1,3 @@
-
 //menu for evry page
 fetch("/components/navbar/menu.html")
   .then(response => response.text())
